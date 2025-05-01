@@ -23,7 +23,7 @@ export function overlaysFunctions() {
   }
 
   const openOverlay = () => {
-    $BTNS.on('click', function (event) {
+    $BTNS.on('click', function(event) {
       const $btn = $(this)
       const overlayVal = $btn.attr('data-overlay-anchor')
 
@@ -51,8 +51,19 @@ export function overlaysFunctions() {
 
   const closeOverlayByCloseBtn = () => {
     const $closeBtn = $('.js-overlay-close-btn')
+    const $closeFormBtn = $('.js-close-overlay-btn')
 
-    $closeBtn.on('click', function () {
+    $closeBtn.on('click', function() {
+      closeOverlay()
+    })
+
+    $closeFormBtn.on('click', function() {
+      const $t = $(this)
+      const $formShell = $t.parents('.js-call-form-shell')
+      $formShell.find('.js-call-form-success').removeClass(SHOW_CLASS)
+      $formShell.find('.js-call-form-success').removeClass(SHOW_CLASS)
+      $formShell.find('.js-call-form').addClass(SHOW_CLASS)
+
       closeOverlay()
     })
   }
@@ -60,7 +71,7 @@ export function overlaysFunctions() {
   const closeOverlayByOrderBtn = () => {
     const $closeBtn = $('.js-topline-order-btn')
 
-    $closeBtn.on('click', function () {
+    $closeBtn.on('click', function() {
       closeOverlay()
     })
   }
