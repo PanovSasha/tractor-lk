@@ -1,0 +1,48 @@
+@import "descriptions";
+
+.animate-svg {
+  flex: none;
+
+  .animate {
+    stroke-width: 1;
+    stroke: @black;
+    fill: transparent;
+    animation: dash 3s ease-in-out;
+    animation-fill-mode: forwards;
+  }
+
+  &--green {
+    fill: transparent;
+
+    .animate {
+      animation: green-fill 3s ease-in-out forwards, dash 4s ease-in-out forwards;
+      stroke: @turqs-main;
+    }
+  }
+
+  &--green-no-fill {
+    fill: transparent;
+
+    .animate {
+      animation: dash 4s ease-in-out forwards;
+      stroke: @turqs-main;
+      stroke-width: 3;
+    }
+  }
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes green-fill {
+  0% {
+    fill: transparent;
+  }
+
+  100% {
+    fill: @turqs-main;
+  }
+}

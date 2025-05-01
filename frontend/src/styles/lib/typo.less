@@ -1,0 +1,250 @@
+@import 'descriptions';
+
+.Jeko() {
+  font-family: 'Jeko', Marmelad, 'Lucida Grande', Arial, 'Hiragino Sans GB', Georgia, sans-serif;
+}
+
+.Inter() {
+  font-family: 'Inter', Marmelad, 'Lucida Grande', Arial, 'Hiragino Sans GB', Georgia, sans-serif;
+}
+
+.fs88-72(@weight:600) {
+  font-size: 88px;
+  line-height: 72px;
+  font-weight: @weight;
+}
+
+.fs64-64(@weight:600) {
+  font-size: 64px;
+  line-height: 64px;
+  font-weight: @weight;
+}
+
+.fs48-52(@weight:600) {
+  font-size: 48px;
+  line-height: 52px;
+  font-weight: @weight;
+}
+
+.fs40-36(@weight:600) {
+  font-size: 40px;
+  line-height: 36px;
+  font-weight: @weight;
+}
+
+.fs32-32(@weight:600) {
+  font-size: 32px;
+  line-height: 32px;
+  font-weight: @weight;
+}
+
+.fs28-28(@weight:600) {
+  font-size: 28px;
+  line-height: 28px;
+  font-weight: @weight;
+}
+
+.fs24-24(@weight:600) {
+  font-size: 24px;
+  line-height: 24px;
+  font-weight: @weight;
+}
+
+.fs20-24(@weight:600) {
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: @weight;
+}
+
+.fs18-24 (@weight:600) {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: @weight;
+}
+
+.fs16-22 (@weight:600) {
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: @weight;
+}
+
+.fs16-20 (@weight:600) {
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: @weight;
+}
+
+.fs14-18 (@weight:600) {
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: @weight;
+}
+
+.fs12-16(@weight:600) {
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: @weight;
+}
+
+.ellipsis(@char-count:unset) {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex: none;
+  max-width: @char-count;
+}
+
+.ellipsis-char(@char-count:unset) {
+  white-space: nowrap;
+  overflow: hidden;
+  flex: none;
+  text-overflow: ellipsis;
+  max-width: @char-count;
+}
+
+.ellipsis-max-width(@max-width:100%) {
+  white-space: nowrap;
+  overflow: hidden;
+  flex: none;
+  text-overflow: ellipsis;
+  max-width: @max-width;
+}
+
+.multiline-ellipsis(@line-count: 2) {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: @line-count;
+  flex: none;
+  overflow: hidden;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.color-grey {
+  color: @text-secondary;
+}
+
+.color-blue {
+  color: @text-brand;
+}
+
+.h1, .h2, .h3, .h4, .h5, .h6, .h7, .h8, .h9 {
+  .Jeko();
+}
+
+.h1 {
+  .fs88-72(700);
+
+  @media @tablet {
+    .fs40-36(700);
+  }
+}
+
+.h2 {
+  .fs64-64();
+
+  @media @tablet {
+    .fs32-32();
+  }
+}
+
+.h3 {
+  .fs48-52();
+
+  @media @tablet {
+    .fs28-28();
+  }
+}
+
+.h4 {
+  .fs32-32();
+
+  @media @tablet {
+    .fs24-24();
+  }
+}
+
+.h5 {
+  .fs20-24();
+
+  .topline & {
+    @media @tablet {
+      .fs16-20();
+    }
+  }
+}
+
+.h6 {
+  .fs18-24();
+
+  @media @tablet {
+    .fs16-20();
+  }
+
+  .table & {
+    .fs18-24();
+  }
+}
+
+.h7 {
+  .fs16-20();
+
+  @media @tablet {
+    .fs14-18();
+  }
+
+  .table & {
+    .fs16-20();
+  }
+}
+
+.h8 {
+  .fs14-18();
+}
+
+.h9 {
+  .fs14-18();
+}
+
+.p1, .p2, .p3 {
+  .Inter();
+}
+
+.p1(@weight:400) {
+  .fs16-22(@weight)
+}
+
+.p2(@weight:400) {
+  .fs14-18(@weight);
+}
+
+.p3(@weight:400) {
+  .fs12-16(@weight);
+}
+
+.send-success,
+.send-error {
+  display: none;
+  margin-bottom: 0;
+}
+
+.align-center {
+  display: block;
+  max-width: max-content;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.inter {
+  .Inter()
+}
+
+.jeko {
+  .Jeko()
+}

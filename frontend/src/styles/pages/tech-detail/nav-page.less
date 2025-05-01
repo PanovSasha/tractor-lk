@@ -1,0 +1,21 @@
+@import "descriptions";
+
+.nav-page {
+  background-color: @white;
+  border-bottom: 1px solid @border-primary;
+
+  &__slide {
+    .Jeko();
+    .accessibility-link();
+    width: auto;
+    padding: 11px @offset16;
+    border-bottom: 2px solid transparent;
+    z-index: 0;
+
+    &.clicked {
+      border-bottom: 2px solid @bg-active;
+    }
+  }
+
+  margin-bottom: -1px;
+}

@@ -1,0 +1,48 @@
+@import "descriptions";
+
+.ya-share2__list {
+  display: flex;
+  flex-direction: row !important;
+
+  .ya-share2__item {
+    .transition(scale) !important;
+    .accessibility-link() !important;
+    .circle(56) !important;
+    .f-center() !important;
+    background-color: @bg-secondary;
+    margin: 0 !important;
+
+    &::before {
+      content: "";
+    }
+
+    &:hover {
+      scale: 1.04;
+    }
+  }
+
+  .ya-share2__link {
+    .f-center();
+  }
+
+  .ya-share2__badge {
+    .f-center();
+    background-color: transparent !important;
+  }
+
+  .ya-share2__icon {
+    background-size: 26px 26px !important;
+  }
+
+  .ya-share2__item_service_telegram .ya-share2__icon {
+    background-image: url('/assets/svg/icons/socials/tg.svg') !important;
+  }
+
+  .ya-share2__item_service_vkontakte .ya-share2__icon {
+    background-image: url('/assets/svg/icons/socials/vk.svg') !important;
+  }
+
+  .ya-share2__item:hover .ya-share2__icon {
+    opacity: 0.6;
+  }
+}

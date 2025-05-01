@@ -1,0 +1,147 @@
+@import "descriptions";
+
+.input {
+  .transition(border);
+  .radius(12);
+  .p1();
+  background-color: transparent;
+  color: @text-primary;
+  border: 1px solid @border-primary;
+  width: 100%;
+  height: 100%;
+  padding: 13px @offset44 13px @offset16;
+
+  &::placeholder {
+    .Inter();
+    .p1();
+  }
+
+  &:hover {
+    border: 1px solid @border-hover;
+  }
+
+  &:focus-visible {
+    border: 1px solid @border-active;
+  }
+
+  &--search {
+    padding-left: @offset48;
+
+    @media @tablet {
+      padding-left: @offset40;
+    }
+  }
+
+  .topline__block-search-box & {
+    @media @large-than-tablet {
+      .radius(0);
+      border: none;
+      height: 68px;
+    }
+  }
+
+  &__placeholder {
+    .absY-alignment();
+    .p1();
+    .ellipsis();
+    color: @text-tertiary;
+    left: @offset16;
+    pointer-events: none;
+
+    .input__box--search & {
+      max-width: calc(100% - 60px);
+      left: @offset48;
+
+      @media @tablet {
+        left: 40px;
+      }
+    }
+
+    &.hide {
+      display: none;
+    }
+
+    .catalog__filters & {
+      @media @xxl-tablet {
+        .p2();
+      }
+    }
+  }
+
+  &__search-btn, &__erase-btn {
+    .absY-alignment();
+    .f-center();
+    .transition(color);
+    flex: none;
+    left: @offset16;
+
+    &::before {
+      .square(30);
+      .abs-alignment();
+      content: '';
+    }
+
+    &:focus-visible {
+      .radius();
+      border: 1px solid @black;
+    }
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  &__search-btn-icon {
+    @media @tablet {
+      .square(16);
+    }
+  }
+
+  &__erase-btn {
+    left: unset;
+    display: none;
+    right: @offset16;
+
+    .show& {
+      .f-center();
+    }
+  }
+
+  &__search-btn {
+  }
+
+  &--textarea {
+    .radius(8);
+    font-weight: 500;
+  }
+
+  &__box {
+    .radius(12);
+    background-color: @white;
+    height: 48px;
+    transition: box-shadow .2s ease-in-out;
+    position: relative;
+
+    &.error-phone, &.error {
+      &:after {
+        .fs12-16();
+        position: absolute;
+        top: 100%;
+        left: 0;
+        color: @text-danger;
+      }
+    }
+
+    &.error-phone {
+      &:after {
+        content: 'введите Цифры';
+      }
+    }
+
+    &.error {
+      &:after {
+        content: 'Заполните поле';
+      }
+    }
+  }
+}

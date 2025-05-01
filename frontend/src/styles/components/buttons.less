@@ -1,0 +1,37 @@
+@import "descriptions";
+
+
+.btn {
+  .btn-default();
+
+  &:disabled,
+  &[disabled],
+  &.disable {
+    background-color: @bg-disabled;
+    color: @text-disabled;
+    pointer-events: none;
+
+    &:active,
+    &:focus-visible {
+      box-shadow: unset;
+    }
+  }
+
+  &--primary {
+    .btn-primary();
+  }
+
+  &--primary-inv {
+    .btn-primary-inv();
+  }
+
+  &--secondary {
+    .btn-secondary()
+  }
+
+  &--s-size {
+    padding: 9px @offset16;
+  }
+}
+
+

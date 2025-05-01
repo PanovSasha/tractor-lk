@@ -1,0 +1,49 @@
+@import 'descriptions';
+
+.accessibility-link {
+  .accessibility-link();
+
+  &, &--m-44, &--xs-24-black, &--xs-24-blue {
+    &:hover {
+      color: @text-hover;
+    }
+
+    &:active {
+      color: @text-active;
+    }
+
+    &:focus-visible {
+      color: @text-active;
+    }
+  }
+
+  &--xs-24-blue {
+    .h9();
+  }
+
+  &--blue {
+    color: @text-brand;
+  }
+
+  &--with-arrow {
+    display: flex;
+    align-items: center;
+    gap: @offset8;
+  }
+
+  &:disabled,
+  &[disabled],
+  &.disable {
+    color: @text-disabled;
+  }
+}
+
+.inherit-link {
+  font-size: inherit;
+  font-weight: inherit;
+  display: inline;
+}
+
+.no-events-link {
+  pointer-events: none;
+}

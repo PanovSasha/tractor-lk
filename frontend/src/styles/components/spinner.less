@@ -1,0 +1,20 @@
+@import 'descriptions';
+
+.spinner {
+  .circle(48);
+  display: block;
+  border-top: 3px solid @icon-brand;
+  border-right: 3px solid transparent;
+  animation: rotation 1s linear infinite;
+  flex: none;
+  margin: auto;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

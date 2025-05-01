@@ -1,0 +1,59 @@
+@import '../../descriptions';
+
+.overlay {
+  visibility: hidden;
+  position: fixed;
+  inset: 0;
+  z-index: @z-index-overlay;
+  display: none;
+
+  &.show {
+    .smooth-show();
+    visibility: visible;
+    background-color: fade(@icon-primary, 70);
+  }
+
+  &__item {
+    .abs-alignment();
+    display: none;
+
+    &.show {
+      display: block;
+    }
+  }
+
+  &__close-btn {
+    .square(24);
+    .transition(opacity);
+    position: absolute;
+    top: @offset16;
+    right: @offset16;
+
+    &::before {
+      .absY-alignment();
+      .radius(2);
+      background-color: @icon-primary;
+      rotate: 45deg;
+      content: "";
+      right: 4px;
+      width: 16px;
+      height: 2px;
+    }
+
+    &::after {
+      .absY-alignment();
+      .radius(2);
+      background-color: @icon-primary;
+      transform-origin: top;
+      rotate: -135deg;
+      content: "";
+      right: 10px;
+      width: 2px;
+      height: 16px;
+    }
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+}

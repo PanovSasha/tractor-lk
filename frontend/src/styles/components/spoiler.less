@@ -1,0 +1,43 @@
+@import "descriptions";
+
+.spoiler {
+  &__body {
+    @media @tablet {
+      .multiline-ellipsis(6);
+    }
+
+    .spoiler.open & {
+      @media @tablet {
+        animation: showBySlide 0.17s forwards;
+        -webkit-line-clamp: unset;
+        overflow: unset;
+      }
+    }
+  }
+
+  &__btn {
+    .NotoSans();
+    .fs12-16(600);
+    color: @turqs-alt-main;
+    align-items: center;
+    gap: @offset8;
+    margin-top: @offset8;
+    display: none;
+
+    @media @tablet {
+      display: flex;
+    }
+  }
+
+  &__btn-text {
+    text-decoration: underline;
+  }
+
+  &__btn-icon {
+    .transition(rotate);
+
+    .spoiler.open & {
+      rotate: -180deg;
+    }
+  }
+}

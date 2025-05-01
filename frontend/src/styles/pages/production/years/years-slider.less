@@ -1,0 +1,18 @@
+@import "descriptions";
+
+.years-slider {
+  overflow: visible;
+
+  &__slide {
+    visibility: hidden;
+    opacity: 0 !important;
+    pointer-events: none;
+
+    &.swiper-slide-active {
+      opacity: 1 !important;
+      visibility: visible;
+      cursor: pointer;
+      pointer-events: all;
+    }
+  }
+}

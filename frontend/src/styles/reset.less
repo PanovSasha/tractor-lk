@@ -1,0 +1,144 @@
+@import "descriptions";
+
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+form,
+fieldset,
+input,
+textarea,
+p,
+blockquote,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+address,
+caption,
+cite,
+code,
+th,
+var {
+  font-style: normal;
+  font-weight: normal;
+}
+
+fieldset,
+img {
+  border: none;
+}
+
+ol,
+ul, ol ul, ul ol {
+  list-style: none;
+}
+
+caption,
+th {
+  text-align: left;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+}
+
+img, svg {
+  display: block;
+  flex: none;
+  width: 100%;
+  max-width: 100%;
+}
+
+input[type="text"],
+textarea {
+  -webkit-appearance: none;
+}
+
+input {
+  border: none;
+
+  &::placeholder {
+    opacity: 1;
+  }
+
+  &[type="number"] {
+    -moz-appearance: textfield;
+
+    &::-webkit-inner-spin-button {
+      display: none;
+    }
+  }
+}
+
+button {
+  .btn-reset();
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+a {
+  display: inline-block;
+  color: inherit;
+  text-decoration: none;
+
+  &[href^="tel:"] {
+    white-space: nowrap;
+  }
+}
+
+.bx-component-opener, .bx-admin-prefix, .bx-core-dialog-overlay, .bxmedialib, .editor_dialog, .bxml-dialog {
+  & img, svg {
+    display: inline;
+    flex: none;
+    width: auto;
+  }
+
+  & a {
+    display: inline;
+    color: initial;
+    text-decoration: initial;
+  }
+}

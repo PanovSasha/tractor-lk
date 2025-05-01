@@ -1,0 +1,35 @@
+@import "descriptions";
+
+.info {
+  .f-column(12);
+  border: 1px solid @border-primary;
+  padding: @offset16;
+  margin-block: @offset24;
+
+  @media @tablet {
+    background-color: @bg-tertiary;
+    gap: @offset12;
+    border: none;
+  }
+
+  &:first-child {
+    margin-block: 0;
+  }
+
+  h3 {
+    .h7();
+  }
+
+  p {
+    .p3();
+    color: @text-tertiary;
+  }
+
+  h3, p {
+    margin-block: 0;
+  }
+
+  a {
+    .p2();
+  }
+}

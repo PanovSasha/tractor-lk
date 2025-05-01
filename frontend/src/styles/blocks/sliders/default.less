@@ -1,0 +1,39 @@
+@import "descriptions";
+
+.swiper-btns {
+  display: flex;
+  gap: @offset12;
+
+  &--white {
+  }
+}
+
+.swiper-btn {
+  .transition(background-color);
+  .transition(color);
+  .square(44);
+  .f-center();
+  background-color: @bg-brand;
+  color: @white;
+
+  .swiper-btns--white & {
+    background-color: @bg-primary;
+    color: @black;
+  }
+
+  &.swiper-button-disabled {
+    background-color: @bg-disabled;
+    color: @icon-disabled;
+    cursor: not-allowed;
+  }
+}
+
+.swiper-pagination-bullet {
+  .width-height(8, 8);
+  background-color: @bg-primary;
+  opacity: 1;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: @bg-accent;
+}

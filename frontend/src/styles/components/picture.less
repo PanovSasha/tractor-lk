@@ -1,0 +1,22 @@
+@import 'descriptions';
+
+.picture {
+  overflow: hidden;
+  position: relative;
+
+  &--vertical {
+    .aspect-ratio(464, 628);
+  }
+
+  &__img {
+    .abs-alignment();
+    .object-fit();
+    .transition(scale, .2s);
+
+    .picture--scale:hover & {
+      @media @large-than-tablet {
+        scale: 1.006;
+      }
+    }
+  }
+}

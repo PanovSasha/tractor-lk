@@ -1,0 +1,94 @@
+@import "descriptions";
+
+.gallery-lay {
+  &.show {
+    .f-center();
+    margin-inline: auto;
+    width: 75dvw;
+    max-width: 1200px;
+    height: 80dvh;
+    max-height: 950px;
+  }
+
+  &__close-btn {
+    right: -40px;
+
+    &::before, &::after {
+      background-color: @white;
+    }
+  }
+
+  &__slider {
+    .f-center();
+
+
+    @media @l-mobile {
+      width: 75dvw;
+    }
+  }
+
+  &__slide {
+    .f-center(18);
+    height: 80dvh;
+    max-height: 950px;
+    cursor: pointer;
+
+    @media @tablet {
+      flex-direction: column;
+    }
+  }
+
+  &__slide-img {
+    flex: 1 1;
+    max-height: 100%;
+    object-fit: contain;
+
+    @media @tablet {
+      width: min-content;
+    }
+  }
+
+  &__slide-descr {
+    color: @white;
+    align-self: flex-start;
+    flex: none;
+    max-width: 40%;
+
+    @media @tablet {
+      .fs14-18(400);
+      width: 100%;
+    }
+
+    @media @l-mobile {
+      .fs12-16(400);
+    }
+  }
+
+  &__slider-nav {
+    position: absolute;
+    left: calc(100% + 12px);
+    bottom: -24px;
+
+    @media @tablet {
+      .absX-alignment();
+      bottom: -30px;
+    }
+  }
+
+  &__slider-nav-btns {
+    @media @tablet {
+      display: none !important;
+    }
+  }
+
+  &__slider-pagination {
+    display: none;
+
+    @media @tablet {
+      display: flex;
+      width: max-content !important;
+      margin-inline: auto;
+    }
+  }
+}
+

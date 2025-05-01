@@ -1,0 +1,63 @@
+@import "descriptions";
+
+html {
+  height: 100%;
+}
+
+body {
+  .Inter();
+  .p1(400);
+  background: @bg-tertiary;
+  color: @text-primary;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+
+  &.body-lock {
+    overflow: hidden;
+  }
+}
+
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.v-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.v-hidden--b-r {
+  right: 0;
+  bottom: 0;
+}
+
+.only-desktop {
+  @media @tablet {
+    display: none;
+  }
+}
+
+.only-tablet {
+  @media @large-than-tablet {
+    display: none;
+  }
+}
+
+.only-mobile {
+  @media @large-than-s-tablet {
+    display: none;
+  }
+}

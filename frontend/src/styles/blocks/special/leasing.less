@@ -1,0 +1,136 @@
+@import "descriptions";
+
+.leasing {
+  &__dock {
+    display: none;
+
+    &.show {
+      .smooth-show(@t: 0.1s);
+    }
+  }
+}
+
+.leasing-dock {
+  &__title-shell {
+    .f-column(16);
+    padding-top: @offset32;
+    margin-bottom: @offset64;
+
+    @media @tablet {
+      gap: @offset24;
+      margin-bottom: 24px;
+    }
+  }
+
+  &__logo {
+    .width-height(226, 40);
+    align-self: flex-end;
+
+    @media @tablet {
+      max-width: 120px;
+      max-height: 28px;
+      align-self: flex-start;
+    }
+  }
+
+  &__title {
+    @media @m-mobile {
+      .fs24-24();
+    }
+  }
+
+  &__shell {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: @offset12;
+
+    @media @tablet {
+      .f-column(40);
+      flex-direction: column-reverse;
+    }
+  }
+
+  &__aside {
+    position: sticky;
+    top: 80px;
+    align-self: flex-start;
+    min-width: 226px;
+
+    @media @tablet {
+      position: static;
+    }
+
+    @media @s-tablet {
+      width: 100%;
+    }
+  }
+
+  &__aside-btn {
+    @media @s-tablet {
+      width: 100%;
+    }
+  }
+
+  &__body {
+    padding-right: 20%;
+
+    @media @l-tablet {
+      padding-right: 10%;
+    }
+
+    @media @tablet {
+      padding-right: 0;
+    }
+
+    p, b {
+      display: block;
+      margin-bottom: @offset32;
+
+      @media @tablet {
+        margin-bottom: @offset24;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__props {
+    display: flex;
+    border: 1px solid @border-primary;
+    margin-top: @offset64;
+
+    @media @tablet {
+      margin-top: @offset40;
+    }
+
+    @media @s-tablet {
+      flex-direction: column;
+    }
+  }
+
+  &__prop {
+    .h6();
+    .f-center(8);
+    border-right: 1px solid @border-primary;
+    flex-direction: column;
+    flex: 1;
+    text-align: center;
+    padding: @offset24;
+
+    @media @l-tablet {
+      padding: @offset16;
+    }
+
+    @media @s-tablet {
+      border-right: none;
+      border-bottom: 1px solid @border-primary;
+      padding: @offset24;
+    }
+
+    &:last-child {
+      border: none;
+    }
+  }
+}

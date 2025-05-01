@@ -1,0 +1,103 @@
+@import 'descriptions';
+
+.checkbox {
+  &__label {
+    .fs14-16(400);
+    display: flex;
+    align-items: flex-start;
+    padding-left: @offset28;
+    cursor: pointer;
+    position: relative;
+
+    @media @tablet {
+      .fs12-16(400);
+    }
+
+    &--bold {
+      font-weight: 700;
+    }
+
+    input {
+      .v-hidden();
+    }
+
+    .detail-info__order-form-block--with-mark & {
+      width: max-content;
+      margin-left: @offset16;
+      padding-block: @offset8;
+    }
+  }
+
+  &__text {
+    position: relative;
+
+    &::before {
+      .transition(border-color);
+      .transition(background-color);
+      .square(24);
+      .radius(6);
+      position: absolute;
+      top: -5px;
+      left: -32px;
+      content: '';
+      border: 1px solid @blue60;
+
+      @media @tablet {
+        top: -4px;
+      }
+
+      .checkbox__input--radio + & {
+        .radius(24);
+        background-image: url("../../assets/svg/checkbox-mark/checkbox-point.svg");
+        background-size: 9px 9px;
+        background-position: center center;
+        background-repeat: no-repeat;
+      }
+
+      .checkbox__input--green-mark + & {
+        background-color: transparent;
+        border: unset;
+      }
+
+      .checkbox__input:checked + & {
+        border: 1px solid @blue60;
+        background-color: @blue60;
+      }
+
+      .checkbox__input--green-mark:checked + & {
+        background-image: url("../../assets/svg/checkbox-mark/checkbox-green-mark.svg");
+        background-size: 24px 24px;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-color: transparent;
+        border: unset;
+      }
+
+      .checkbox__input:focus-visible + & {
+        box-shadow: 0 0 0 2px @blue-main;
+      }
+    }
+  }
+
+  &__mark {
+    display: none;
+
+    .checkbox__input:checked ~ & {
+      .width-height(13, 12);
+      .smooth-show();
+      color: @white;
+      position: absolute;
+      top: 2px;
+      left: 3px;
+
+      @media @tablet {
+        top: 3px;
+      }
+    }
+
+    .checkbox__input:checked ~ &.aside-filters__checkbox-mark {
+      top: 10px;
+      left: 14px;
+    }
+  }
+}

@@ -1,0 +1,70 @@
+@import "descriptions";
+
+.years-thumbs-slider {
+  width: max-content;
+  max-width: calc(100% - 198px);
+  padding: 3px 20px;
+  position: relative;
+  z-index: 2;
+  margin-left: 218px;
+  margin-top: -46px;
+
+  @media @tablet {
+    overflow: hidden;
+    max-width: calc(100% + 2 * @tablet-padding);
+    margin-left: -@tablet-padding;
+    padding-inline: @tablet-padding;
+    margin-top: -44px;
+  }
+
+  &::before, &:after {
+    content: "";
+    position: absolute;
+    right: -1px;
+    top: -1px;
+    height: calc(100% + 2px);
+    width: 1px;
+    box-shadow: 0 0 10px 16px @white;
+    z-index: 2;
+
+    @media @tablet {
+      display: none;
+      content: none;
+    }
+  }
+
+  &::after {
+    right: unset;
+    left: -1px;
+  }
+
+  &__slide {
+    background-color: @bg-active-secondary;
+    color: @black;
+    white-space: nowrap;
+    width: max-content;
+
+    &::after {
+      .absY-alignment();
+      background-color: @bg-active-secondary;
+      content: "";
+      left: 100%;
+      width: 30px;
+      height: @offset4;
+      pointer-events: none;
+    }
+
+    &:last-child:after {
+      content: none;
+    }
+
+    &:active {
+      background-color: @bg-active;
+    }
+
+    &.swiper-slide-thumb-active {
+      background-color: @bg-brand;
+      color: @white;
+    }
+  }
+}

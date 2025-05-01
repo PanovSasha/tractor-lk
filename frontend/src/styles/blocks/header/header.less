@@ -1,0 +1,23 @@
+@import "descriptions";
+
+.header {
+  padding-block: @offset32 @offset50;
+
+  @media @tablet {
+    padding-block: 0 @offset40;
+  }
+
+  &--with-breadcrumbs {
+    padding-block: @offset32 @offset40;
+
+    @media @tablet {
+      padding-block: @offset16 @offset40;
+    }
+  }
+
+  &--search {
+    @media @tablet {
+      padding-bottom: @offset40;
+    }
+  }
+}

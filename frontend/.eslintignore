@@ -1,0 +1,13 @@
+node_modules
+# PWA autogenerate
+**/public/precache.*.*.js
+**/public/sw.js
+**/public/workbox-*.js
+**/public/worker-*.js
+**/public/fallback-*.js
+
+# bonus games
+**/public/unity
+
+# Next.js serve
+.next

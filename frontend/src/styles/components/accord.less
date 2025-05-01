@@ -1,0 +1,81 @@
+@import "descriptions";
+
+.accord {
+  overflow: hidden;
+
+  &__btn {
+    position: relative;
+    white-space: initial;
+    width: 100%;
+    font-weight: 600;
+
+    &::before {
+      .absY-alignment();
+      .radius(2);
+      background-color: @icon-primary;
+      content: "";
+      right: 14px;
+      width: 16px;
+      height: 2px;
+
+      .active & {
+        transform: rotate(90deg);
+        opacity: 0;
+      }
+
+      .params__accord & {
+        right: 25px;
+
+        @media @tablet {
+          right: 14px;
+        }
+      }
+    }
+
+    &::after {
+      .absY-alignment();
+      .transition(rotate);
+      .radius(2);
+      background-color: @icon-primary;
+      transform-origin: top;
+      content: "";
+      right: 21px;
+      width: 2px;
+      height: 16px;
+
+      .active & {
+        rotate: 90deg;
+      }
+
+      .params__accord & {
+        right: 32px;
+
+        @media @tablet {
+          right: 21px;
+        }
+      }
+    }
+  }
+
+  &__btn-icon {
+    .transition(rotate);
+    rotate: -180deg;
+
+    .accord.active &, .accord.show & {
+      rotate: 0deg;
+    }
+  }
+
+  &__body {
+    display: none;
+
+    .show & {
+      display: block;
+    }
+
+    .active & {
+      animation: showBySlide 0.3s forwards;
+      display: block;
+    }
+  }
+}

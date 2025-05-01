@@ -1,0 +1,55 @@
+@import "descriptions";
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  counter-reset: step;
+  gap: @offset12;
+
+  @media @s-tablet {
+    .f-column(12);
+  }
+}
+
+.step {
+  .f-column();
+  background-color: @bg-tertiary;
+  position: relative;
+  padding: @offset80 @offset16 @offset16;
+
+  @media @tablet {
+    padding-top: @offset56;
+  }
+
+  @media @s-tablet {
+    min-height: 164px;
+  }
+
+  &::before {
+    .h3();
+    color: @text-brand;
+    position: absolute;
+    top: @offset16;
+    left: @offset16;
+    counter-increment: step;
+    content: counter(step, decimal-leading-zero);
+  }
+
+  &__title {
+    .h5();
+    margin-bottom: @offset24;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__btn {
+    width: max-content;
+    margin-top: auto;
+  }
+
+  &__mail {
+    .h5();
+  }
+}

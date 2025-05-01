@@ -1,0 +1,99 @@
+@import 'descriptions';
+
+.icon {
+  flex-shrink: 0;
+
+  &--12 {
+    .square(12);
+  }
+
+  &--16 {
+    .square(16);
+  }
+
+  &--18 {
+    .square(18);
+  }
+
+  &--20 {
+    .square(20);
+
+    .input__search-btn & {
+      @media @tablet {
+        .square(16);
+      }
+    }
+  }
+
+  &--24 {
+    .square(24);
+
+    .btn--square & {
+      @media @tablet {
+        .square(20);
+      }
+
+      @media @l-mobile {
+        .square(18)
+      }
+    }
+  }
+
+  &--26 {
+    .square(26);
+  }
+
+  &--28 {
+    .square(28);
+  }
+
+  &--30 {
+    .square(30);
+  }
+
+  &--32 {
+    .square(32);
+  }
+
+  &--34 {
+    .square(34);
+  }
+
+  &--36 {
+    .square(36);
+  }
+
+  &--40 {
+    .square(40);
+
+    .btn--download & {
+      @media @l-mobile {
+        .square(32);
+      }
+    }
+  }
+
+  &--48 {
+    .square(48);
+  }
+
+  &--64 {
+    .square(64);
+  }
+
+  &--80 {
+    .square(80);
+  }
+
+  &--90deg {
+    rotate: 90deg;
+  }
+
+  &--180deg {
+    rotate: 180deg;
+  }
+
+  &--270deg {
+    rotate: 270deg;
+  }
+}

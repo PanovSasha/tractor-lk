@@ -1,0 +1,166 @@
+@import "descriptions";
+
+.params {
+  display: grid;
+  align-items: flex-start;
+  gap: 13px;
+  grid-template-columns: 583px 1fr;
+  grid-template-areas: 'title accord'
+                       'btn accord'
+                       '. accord';
+
+  @media @l-tablet {
+    .f-column();
+  }
+
+  @media @tablet {
+    gap: @offset4;
+  }
+
+  &__title {
+    .params & {
+      grid-area: title;
+      position: sticky;
+      top: 140px;
+      margin-bottom: 88px;
+
+      @media @l-tablet {
+        position: static;
+        margin-bottom: @offset40;
+      }
+    }
+  }
+
+  &__accords {
+    .f-column(4);
+
+    .params & {
+      grid-area: accord;
+
+      @media @l-tablet {
+        width: 100%;
+      }
+    }
+  }
+
+  &__btn {
+    .params & {
+      width: max-content;
+      grid-area: btn;
+      position: sticky;
+      top: 318px;
+      margin-top: -@offset40;
+
+      @media @l-tablet {
+        margin-top: @offset40;
+      }
+    }
+  }
+
+  &__accord-title {
+    .f-between(24);
+    .h6();
+    background-color: @bg-tertiary;
+    position: relative;
+    padding: @offset24;
+
+    @media @tablet {
+      padding: 15px @offset12;
+    }
+  }
+
+  &__accord-btn {
+    .abs-alignment();
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  &__accord-btn-icon {
+    margin-inline: auto @offset24;
+  }
+
+  &__accord-body {
+    display: none;
+    padding: 0 @offset24;
+    margin-bottom: 4px;
+
+    @media @tablet {
+      padding: 0;
+    }
+
+    .show.params__accord & {
+      .f-column(0);
+    }
+
+    .active.params__accord & {
+      .f-column(0);
+      animation: showBySlide 0.3s forwards;
+      display: flex;
+    }
+  }
+
+  &__accord-body-row {
+    .f-between(16);
+    padding-block: @offset24;
+    border-bottom: 1px solid @border-primary;
+
+    @media @tablet {
+      min-height: 52px;
+      padding: 14px;
+    }
+
+    @media @l-mobile {
+      .f-column(5);
+      align-items: flex-start;
+    }
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    .params__accord--contacts & {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+
+      @media @l-mobile {
+        .f-column(5);
+        align-items: flex-start;
+      }
+
+      &--no-column {
+        @media @l-mobile {
+          display: grid;
+          grid-template-columns: repeat(2, auto);
+        }
+      }
+    }
+  }
+
+  &__accord-body-row-name {
+    .p1();
+    color: @text-secondary;
+
+    @media @tablet {
+      .fs14-18(400);
+    }
+  }
+
+  &__accord-body-row-value {
+    .h7();
+    .f-column();
+    text-align: right;
+
+    .params__accord--contacts & {
+      text-align: left;
+
+      & * {
+        max-width: max-content;
+      }
+
+      & .p1 {
+        font-weight: 400;
+      }
+    }
+  }
+}

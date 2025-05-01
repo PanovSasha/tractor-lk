@@ -1,0 +1,86 @@
+@import "descriptions";
+
+.factory {
+  background-color: @blue-870;
+  color: @white;
+  display: grid;
+  grid-template-columns:  50.3% 49.7%;
+  position: relative;
+  min-height: 476px;
+
+  @media @tablet {
+    .f-column();
+    min-height: auto;
+  }
+
+  &__info {
+    .f-column();
+    .full-width-tablet();
+    background-color: @blue-870;
+    position: relative;
+    z-index: 3;
+    pointer-events: none;
+    padding: @offset40;
+
+    @media @tablet {
+      padding: @offset32;
+    }
+
+    @media @l-mobile {
+      padding: @offset20;
+    }
+  }
+
+  &__info-logo-shell {
+    display: flex;
+    align-items: center;
+    gap: @offset20;
+    margin-bottom: @offset40;
+  }
+
+  &__info-logo {
+    .width-height(70, 70);
+    flex: none;
+  }
+
+  &__info-title {
+    .h3();
+    margin-bottom: @offset20;
+  }
+
+  &__info-text {
+    margin-bottom: @offset20;
+  }
+
+  &__info-link {
+    display: flex;
+    align-items: center;
+    gap: @offset20;
+    justify-self: flex-end;
+    position: relative;
+    z-index: 2;
+    pointer-events: none;
+    margin-top: @offset20;
+
+    @media @tablet {
+      margin-top: @offset16;
+    }
+
+    @media @l-mobile {
+      margin-top: @offset12;
+    }
+  }
+
+  &__info-btn {
+    position: relative;
+    z-index: 2;
+    pointer-events: all;
+
+  }
+
+  &__picture {
+    @media @tablet {
+      display: none;
+    }
+  }
+}

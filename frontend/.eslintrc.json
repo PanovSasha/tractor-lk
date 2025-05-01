@@ -1,0 +1,96 @@
+{
+  "root": true,
+  "ignorePatterns": ["**/*"],
+  "plugins": ["@nrwl/nx"],
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
+      "rules": {
+        "no-console": "error",
+        "no-alert": "error",
+        "object-shorthand": "warn",
+        "max-len": [
+          "error",
+          {
+            "code": 80,
+            "ignoreComments": true,
+            "ignoreTrailingComments": true,
+            "ignoreUrls": true,
+            "ignoreStrings": true,
+            "ignoreTemplateLiterals": true,
+            "ignoreRegExpLiterals": true
+          }
+        ],
+        "eqeqeq": [
+          "error",
+          "always",
+          {
+            "null": "ignore"
+          }
+        ],
+        "dot-notation": [
+          "error",
+          {
+            "allowKeywords": true,
+            "allowPattern": "^[a-z]+(_[a-z]+)+$"
+          }
+        ],
+        "prefer-template": "error",
+        "no-unneeded-ternary": [
+          "error",
+          {
+            "defaultAssignment": false
+          }
+        ],
+        "no-nested-ternary": "error",
+        "no-lonely-if": "error",
+        "no-else-return": "error",
+        "no-useless-return": "error",
+        "newline-before-return": "error",
+        "prefer-arrow-callback": "error",
+        "arrow-body-style": ["error", "as-needed"],
+        "no-duplicate-imports": "error",
+        "no-restricted-imports": [
+          "error",
+          {
+            "paths": [
+              {
+                "name": "react",
+                "importNames": ["default"],
+                "message": "Use destructured named imports instead"
+              }
+            ]
+          }
+        ],
+        "import/order": [
+          "error",
+          {
+            "newlines-between": "always",
+            "warnOnUnassignedImports": true,
+            "pathGroupsExcludedImportTypes": [""],
+            "groups": ["builtin", "external", "internal", "type", "parent", "sibling", "index", "object"],
+            "pathGroups": [
+              {
+                "pattern": "*.+(svg|png|jpg|jpeg|webp)",
+                "patternOptions": { "matchBase": true },
+                "group": "unknown",
+                "position": "before"
+              },
+              {
+                "pattern": "*.less",
+                "patternOptions": { "matchBase": true },
+                "group": "unknown",
+                "position": "after"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "files": ["*.js", "*.jsx"],
+      "extends": ["plugin:@nrwl/nx/javascript"],
+      "rules": {}
+    }
+  ]
+}

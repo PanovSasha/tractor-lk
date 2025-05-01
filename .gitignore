@@ -1,0 +1,88 @@
+/.vscode/
+/bitrix/
+/upload/
+
+*.env
+.DS_*
+*.log
+logs
+**/*.backup.*
+**/*.back.*
+
+/node_modules/
+/frontend-old-design/node_modules/
+frontend-old-design/node_modules/
+/frontend/node_modules/
+frontend/node_modules/
+/frontend-old-design/dist/
+/frontend/dist/
+dist
+dist/
+/.idea/
+.idea/
+.gitlab-ci.yml
+/pdf-configurator/pdf
+robots.txt
+.out/
+build/
+cache/
+bower_componets
+
+psd
+thumb
+sketch
+
+### IDE ###
+.idea
+.vscode
+
+### macOS ###
+# General
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Thumbnails
+._*
+
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+### Windows ###
+# Windows thumbnail cache files
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+
+# Dump file
+*.stackdump
+
+# Folder config file
+[Dd]esktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# Windows Installer files
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+
+# Windows shortcuts
+*.lnk

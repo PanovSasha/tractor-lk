@@ -1,0 +1,40 @@
+@import "descriptions";
+
+.contacts {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: @offset12;
+  margin-bottom: @offset50;
+
+  @media @tablet {
+    margin-bottom: @offset40;
+  }
+
+  @media @tablet {
+    .f-column(40);
+  }
+
+  &__map {
+    @media @tablet {
+      height: 400px;
+    }
+
+    @media @l-mobile {
+      height: 250px;
+    }
+  }
+
+  &__descr {
+    .f-column(40);
+    padding-inline: @offset40;
+
+    @media @l-tablet {
+      gap: @offset16;
+      padding-inline: @offset24;
+    }
+
+    @media @tablet {
+      padding-inline: 0;
+    }
+  }
+}

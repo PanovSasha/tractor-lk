@@ -1,0 +1,13 @@
+@import "descriptions";
+
+.lk {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 238px 1fr;
+  gap: 24px;
+  height: 100%;
+
+  @media @tablet {
+    grid-template-columns: 1fr;
+  }
+}

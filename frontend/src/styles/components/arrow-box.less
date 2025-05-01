@@ -1,0 +1,57 @@
+@import "descriptions";
+
+.arrow-box {
+  border-right: 1px solid @turqs-main;
+  border-left: 1px solid @turqs-main;
+  width: 100%;
+  height: 17px;
+  flex: none;
+  position: relative;
+
+  &::before, &::after {
+    .absY-alignment();
+  }
+
+  &::before {
+    .triangle(left, 5, 7, @turqs-main);
+    left: -1px;
+  }
+
+  &::after {
+    .triangle(right, 5, 7, @turqs-main);
+    right: -1px;
+  }
+
+  &--dotted {
+    border-left: 1px solid transparent;
+
+    &::before {
+      .circle(5);
+      .absY-alignment();
+      background-color: @turqs-main;
+      border: unset;
+      left: 0;
+      content: '';
+    }
+  }
+
+  &--mb-40 {
+    margin-bottom: @offset40;
+
+    @media @tablet {
+      margin-bottom: @offset24;
+    }
+
+    @media @l-mobile {
+      margin-bottom: @offset16;
+    }
+  }
+
+  &__line {
+    .absX-alignment();
+    top: calc(50% - 1px);
+    width: calc(100% - 4px);
+    height: 2px;
+    border-top: 1px dashed @turqs-main;
+  }
+}

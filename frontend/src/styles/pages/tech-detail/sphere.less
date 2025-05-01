@@ -1,0 +1,64 @@
+@import "descriptions";
+
+.spheres {
+  .full-width-tablet();
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: @offset12;
+
+  @media @tablet {
+    .hide-scrollbar();
+    overflow: auto;
+    display: flex;
+    gap: @offset8;
+    padding-inline: @tablet-padding;
+  }
+}
+
+.sphere {
+  .f-column(24);
+  background-color: @bg-secondary;
+  align-items: center;
+  padding: @offset24;
+
+  @media @tablet {
+    flex: none;
+    width: 25%;
+    padding: @offset16 @offset8;
+  }
+
+  @media @s-tablet {
+    width: 30%;
+  }
+
+  @media @l-mobile {
+    width: 47%;
+  }
+
+  &__title {
+    .h6();
+    text-align: center;
+
+    @media @m-mobile {
+      .fs12-16();
+    }
+  }
+
+  &__img {
+    .transition(scale);
+    flex: none;
+    max-width: 196px;
+    height: auto;
+    margin-top: auto;
+
+    @media @tablet {
+      max-width: 90px;
+    }
+
+    .sphere:hover & {
+      @media @large-than-tablet {
+        scale: 1.02;
+      }
+    }
+  }
+}

@@ -1,0 +1,128 @@
+@import 'descriptions';
+
+.select {
+  .Inter();
+  position: relative;
+  width: 100%;
+  flex: none;
+
+  &.disabled, &.disable {
+    pointer-events: none;
+  }
+
+  &__current-btn-container {
+    position: relative;
+  }
+
+  &__current-btn {
+    .p1();
+    .Inter();
+    .radius(12);
+    .transition(border-color);
+    .transition(background-color);
+    .transition(color);
+    .ellipsis();
+    border: 1px solid @border-primary;
+    width: 100%;
+    position: relative;
+    padding: 12px @offset16;
+    height: 48px;
+
+    &::after {
+      .absY-alignment();
+      .width-height(20, 20);
+      .transition(rotate);
+      right: @offset16;
+      content: "";
+      transform-origin: top center;
+      background: url("/assets/svg/icons/arrow-down.svg") center center /  20px 20px no-repeat;
+    }
+
+    .select.open &:after {
+      rotate: -180deg;
+    }
+
+    .select.disable &, .select.disabled & {
+      background-color: @bg-disabled;
+      color: @text-disabled;
+      border-color: transparent;
+
+      &::after {
+        opacity: 0.4;
+      }
+    }
+
+    .catalog__filters & {
+      @media @xxl-tablet {
+        .p2();
+      }
+    }
+  }
+
+  &__options {
+    .radius(8);
+    width: 100%;
+    background-color: @white;
+    border: 1px solid @border-primary;
+    box-shadow: 0 4px 15px 0 #0000001A;
+    overflow: auto;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    padding: @offset8;
+    max-height: 204px;
+    display: none;
+    scrollbar-gutter: stable;
+
+    @media @large-than-tablet {
+      &::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background: rgba(0, 0, 0, 0.6);
+        border-radius: 8px;
+      }
+
+      &::-webkit-scrollbar-track {
+        background: transparent;
+      }
+
+      &::-webkit-scrollbar-button {
+        display: none;
+      }
+    }
+
+    .select.open & {
+      .smooth-show();
+      .f-column(4);
+    }
+  }
+
+  &__options-title {
+    //.fs14-16(400);
+    //color: @;
+    padding: @offset10 @offset16;
+  }
+
+  &__option {
+    .radius(8);
+    .ellipsis();
+    .f-between();
+    .btn-transition();
+    .btn-primary-inv();
+    flex: none;
+    padding: 9px;
+  }
+
+  &__native {
+    .square(0);
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0;
+  }
+}

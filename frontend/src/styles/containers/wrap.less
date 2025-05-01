@@ -1,0 +1,19 @@
+@import 'descriptions';
+
+.wrap {
+  .f-column();
+  flex: 1;
+  width: 100%;
+  max-width: @layout-width;
+  padding-inline: @desktop-padding;
+  margin-inline: auto;
+
+  @media @tablet {
+    padding-inline: @tablet-padding;
+  }
+
+  @media @l-mobile {
+    padding-inline: @mobile-padding;
+  }
+}
+

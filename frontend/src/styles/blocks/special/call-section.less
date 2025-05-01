@@ -1,0 +1,35 @@
+@import "descriptions";
+
+.call-sec {
+  .f-between();
+  align-items: flex-start;
+  gap: 10%;
+  padding: @offset100 @offset16;
+
+  @media @xxl-tablet {
+    padding-block: @offset40;
+  }
+
+  @media @tablet {
+    gap: @offset40;
+    padding: @offset40 @offset16;
+  }
+
+  @media @s-tablet {
+    flex-direction: column;
+  }
+
+  &__descr__title {
+    margin-bottom: @offset20;
+  }
+
+  &__descr-subtitle {
+    color: @text-secondary;
+
+    & + & {
+      margin-top: @offset24;
+    }
+  }
+}
+
+

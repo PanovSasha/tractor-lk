@@ -1,0 +1,144 @@
+@import "descriptions";
+
+.bonus {
+  display: grid;
+  grid-template-columns: 36% 1fr;
+  align-items: flex-start;
+  gap: @offset12;
+  padding-right: 8%;
+
+  @media @l-tablet {
+    padding-right: 0;
+  }
+
+  @media @tablet {
+    .f-column(40);
+    flex-direction: column-reverse;
+  }
+
+  &__slider-shell {
+    .f-column(24);
+    align-self: stretch;
+  }
+
+  &__slider {
+    width: 100%;
+  }
+
+  &__slide {
+    background-color: @white;
+    padding: @offset12 0 0 @offset64;
+
+    @media @tablet {
+      padding: 0;
+    }
+  }
+
+  &__slide-icon {
+    .square(48px);
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    @media @tablet {
+      left: unset;
+      right: 0;
+    }
+  }
+
+  &__slide-title {
+    .h4();
+    margin-bottom: @offset12;
+
+    @media @tablet {
+      margin-bottom: @offset16;
+      padding: @offset12 @offset60 @offset12 0;
+    }
+  }
+
+  &__slide-descr {
+    .p1();
+    color: @text-secondary;
+  }
+
+  &__slider-nav {
+    margin-top: auto;
+
+    @media @tablet {
+      display: none;
+    }
+  }
+
+  &__slider-pagination {
+    .p2();
+    color: @text-secondary;
+    display: flex;
+    align-items: center;
+  }
+
+  &__img-shell {
+    .full-width-tablet();
+    position: relative;
+  }
+
+  &__img {
+  }
+
+  &__img-anchors {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__img-anchor {
+    .h5();
+    .f-center();
+    color: @text-primary;
+    aspect-ratio: 1/1;
+    width: 7.2%;
+    border-radius: 100%;
+    position: absolute;
+    background-color: @bg-secondary;
+    cursor: pointer;
+
+    @media @tablet {
+      .h6();
+      min-width: 40px;
+      min-height: 40px;
+    }
+
+    @media @l-mobile {
+      min-width: 32px;
+      min-height: 32px;
+    }
+
+    &.active {
+      background-color: @bg-brand-orange;
+      color: @white;
+
+      &:focus-visible {
+        outline: 2px solid @border-focus;
+      }
+
+      &:hover {
+        @media @large-than-tablet {
+          background-color: @orange-400;
+        }
+      }
+
+      &:active {
+        background-color: @orange-600;
+      }
+    }
+
+
+  }
+
+  &__img-anchor-number {
+    margin-bottom: -4px;
+  }
+
+  &__picture {
+  }
+}
