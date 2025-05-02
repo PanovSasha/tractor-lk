@@ -12,7 +12,7 @@
     position: sticky;
     top: 0;
     z-index: @z-index-sticky;
-    padding: @offset8 @offset16;
+    padding-inline: @offset16;
   }
 
   &:after {
@@ -34,6 +34,12 @@
     position: sticky;
     top: 0;
     z-index: 1;
+
+    &.mobile {
+      @media @tablet {
+        height: 100dvh;
+      }
+    }
   }
 
   &__topline-links {
@@ -52,6 +58,13 @@
 
     @media @tablet {
       display: none;
+    }
+
+    .lk-topline.mobile + & {
+      @media @tablet {
+        display: flex;
+        margin-inline: auto;
+      }
     }
   }
 }

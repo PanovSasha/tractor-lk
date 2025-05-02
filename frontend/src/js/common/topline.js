@@ -1,63 +1,52 @@
-import { $BODY, $TOPLINE, BODY_LOCK_CLASS, MOBILE_CLASS, ROTATE_CLASS, SHOW_CLASS } from '../lib/constants'
+import {
+  $BODY,
+  $TOPLINE,
+  BODY_LOCK_CLASS,
+  MOBILE_CLASS,
+} from '../lib/constants'
 
 export const topLineFunctions = () => {
   const toggleMobileMenu = () => {
-    const $burger = $('.js-topline-burger')
+    const $burger = $('.js-lk-topline-title-open-btn')
 
-    $burger.on('click', function () {
+    $burger.on('click', function() {
       $TOPLINE.toggleClass(MOBILE_CLASS)
       $BODY.toggleClass(BODY_LOCK_CLASS)
-      $('.js-hover-block').removeClass(SHOW_CLASS)
     })
   }
 
-  const toggleShowToplineSubmenu = () => {
-    const $navItemsWithSubMenu = $('.js-with-hover')
+  const logoutFromLk = () => {
 
-    $.each($navItemsWithSubMenu, function (_, el) {
-      const $el = $(el)
 
-      const $openBtn = $el.find('.js-topline-block-arrow')
-      const $closeBtn = $el.find('.js-hover-block-back-btn')
-      const $submenu = $el.find('.js-hover-block')
+    const $logoutBtn = $('.js-lk-aside-bottom')
 
-      const $withHoverLink = $el.find('.js-with-hover-link')
-      const $submenuTitleM = $el.find('.js-hover-block-part-name')
-
-      $submenuTitleM.text($withHoverLink.text())
-
-      $openBtn.on('click', function () {
-        $submenu.addClass(SHOW_CLASS)
-      })
-
-      $closeBtn.on('click', function () {
-        $submenu.removeClass(SHOW_CLASS)
-      })
-    })
-  }
-
-  const toggleShowModelPicture = () => {
-    const $links = $('[data-model]')
-    const $modelPictures = $('[data-model-picture]')
-
-    $links.on('mouseenter', function () {
+    $logoutBtn.on('click', function() {
       const $t = $(this)
 
-      $.each($modelPictures, function (_, el) {
-        const $el = $(el)
+      $.ajax({
+        type: 'post',
+        // /api/v1/logout выход
+        //  url: '/api/v1/login',
+        url: '/api/v1/logout',
+        headers: {
+          'Api-Key': 'tUKdAP2Gmv/?Vyv23CI16rDsAB=UN7yFpQvirTa5Ix21BzP4w6lFfqr1qSoySJfKVhXCpH',
+        },
+        // data: 'login=test&password=123456',
+        contentType: 'application/x-www-form-urlencoded',
+        success: (response) => {
+          console.log(response)
+          location.reload()
 
-        if ($t.attr('data-model').toLowerCase() === $el.attr('data-model-picture').toLowerCase()) {
-          $el.addClass(SHOW_CLASS)
-        }
+          // if (response.status === 'success' && response.data.personal_link) {
+          //   window.location.href = response.data.personal_link;
+          // }
+        },
+        error: () => {
+        },
       })
     })
-
-    $links.on('mouseleave', function () {
-      $modelPictures.removeClass(SHOW_CLASS)
-    })
   }
-
+  
   toggleMobileMenu()
-  toggleShowModelPicture()
-  toggleShowToplineSubmenu()
+  logoutFromLk()
 }

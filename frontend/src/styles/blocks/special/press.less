@@ -64,6 +64,16 @@
     &--grid-area {
       grid-area: news;
     }
+
+    &--scroll-mobile {
+      .hide-scrollbar();
+      width: calc(100% + 2 * @tablet-padding);
+      display: flex;
+      gap: @offset8;
+      overflow: auto;
+      margin-left: -@tablet-padding;
+      padding-inline: @tablet-padding;
+    }
   }
 
   &__news-no-result {

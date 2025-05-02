@@ -33,6 +33,13 @@
     grid-template-areas: 'title btn'
                          'news news';
     row-gap: 24px;
+
+    @media @l-mobile {
+      grid-template-columns: 1fr;
+      grid-template-areas: 'title'
+                           'news'
+                           'btn';
+    }
   }
 
   &--no-apdding {
@@ -199,6 +206,10 @@
     margin-left: auto;
     width: min-content;
     grid-area: btn;
+
+    @media @l-mobile {
+      width: 100%;
+    }
   }
 }
 

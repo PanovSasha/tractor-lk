@@ -3,7 +3,7 @@ export const DADATA_API_KEY = '844072ce390fc17c7699c27567cc4d5ed23545ef'
 export const $DOCUMENT = $(document)
 export const $WINDOW = $(window)
 export const $BODY = $('body')
-export const $TOPLINE = $('.js-topline')
+export const $TOPLINE = $('.js-lk-topline')
 export const $LOCAL_MENU = $('.js-topline-nav')
 
 export const IS_DEV = window.location.hostname === 'localhost'

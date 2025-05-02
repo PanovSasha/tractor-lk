@@ -11,6 +11,7 @@
       position: relative;
       top: auto;
       margin-block: 0;
+      height: 56px;
     }
   }
 
@@ -28,12 +29,52 @@
   &__title-open-btn {
     display: none;
 
+    &:active {
+      background-color: @bg-secondary;
+    }
+
     @media @tablet {
       .h6();
       .circle(40);
       .f-center();
       background-color: @bg-secondary;
       color: @text-brand;
+    }
+
+    .lk-topline.mobile & {
+      @media @tablet {
+        .radius(0);
+        background-color: transparent;
+        font-size: 0;
+        position: relative;
+
+        &::before {
+          .absY-alignment();
+          .radius(2);
+          background-color: @white;;
+          rotate: 45deg;
+          content: "";
+          right: 7px;
+          width: 17px;
+          height: 2px;
+        }
+
+        &::after {
+          .absY-alignment();
+          .radius(2);
+          background-color: @white;
+          transform-origin: top;
+          rotate: -135deg;
+          content: "";
+          right: 13px;
+          width: 2px;
+          height: 17px;
+        }
+
+        &:hover {
+          opacity: 0.7;
+        }
+      }
     }
   }
 
@@ -42,6 +83,10 @@
 
     @media @tablet {
       display: none;
+    }
+
+    .lk-topline.mobile & {
+      display: flex;
     }
   }
 
@@ -54,9 +99,19 @@
     padding-block: 3px;
     margin-bottom: @offset8;
 
+    @media @tablet {
+      padding-block: @offset16;
+      margin-bottom: 0;
+    }
+
     &--offset {
       padding-left: @offset24;
       margin-bottom: @offset16;
+
+      @media @tablet {
+        padding-left: 0;
+        margin-bottom: 0;
+      }
     }
 
     svg {

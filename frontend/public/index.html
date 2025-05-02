@@ -24,7 +24,7 @@
   <div class="wrap">
     <div class="lk">
       <div class="lk-aside">
-        <div class="lk-aside__topline lk-topline">
+        <div class="lk-aside__topline lk-topline js-lk-topline">
           <div class="lk-topline__title">
             <a class="lk-topline__title-logo" href="/">
               <svg class="lk-topline__title-logo-img">
@@ -42,7 +42,7 @@
           <div class="lk-topline__links">
             <a
               class="lk-topline__link active accessibility-link"
-              href="#">
+              href="/">
               <svg class='icon icon--20'>
                 <use xlink:href="/assets/sprite/sprite.svg#home"></use>
               </svg>
@@ -52,9 +52,9 @@
             
             <a
               class="lk-topline__link lk-topline__link--offset accessibility-link"
-              href="#">
+              href="reports.html">
               <svg class="icon icon--20">
-                <use xlink:href="/assets/sprite/sprite.svg#reports"></use>
+                <use xlink:href="/assets/sprite/sprite.svg#info"></use>
               </svg>
               
               Полезная
@@ -66,7 +66,7 @@
               class="lk-topline__link accessibility-link"
               href="#">
               <svg class="icon icon--20">
-                <use xlink:href="/assets/sprite/sprite.svg#info"></use>
+                <use xlink:href="/assets/sprite/sprite.svg#reports"></use>
               </svg>
               
               Отчёты
@@ -74,15 +74,14 @@
           </div>
         </div>
         
-        <a
-          class="lk-aside__bottom accessibility-link"
-          href="#">
+        <button
+          class="lk-aside__bottom js-lk-aside-bottom accessibility-link">
           <svg class="icon icon--20">
             <use xlink:href="/assets/sprite/sprite.svg#exit"></use>
           </svg>
           
           Выйти
-        </a>
+        </button>
       </div>
       
       <div class="lk-body">
@@ -167,7 +166,8 @@
               Полезная информация
             </h2>
             
-            <div class="press__news press__news--grid-area js-press-news">
+            <div
+              class="press__news press__news--scroll-mobile press__news--grid-area js-press-news">
               <a
                 href="/about/press_center/studenty-chgpu-im-i-ya-yakovleva-posetili-zavod-agromash-9"
                 class="news__item">
