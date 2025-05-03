@@ -121,7 +121,7 @@ module.exports = {
     new HTMLWebpackPlugin({
       template: './public/info/info.html',
       inject: 'body',
-      filename: 'press-center.html',
+      filename: 'info.html',
       minify: {
         collapseWhitespace: IS_PROD,
       },
@@ -129,7 +129,7 @@ module.exports = {
     new HTMLWebpackPlugin({
       template: './public/info/info-detail.html',
       inject: 'body',
-      filename: 'press-detail.html',
+      filename: 'info-detail.html',
       minify: {
         collapseWhitespace: IS_PROD,
       },
@@ -138,7 +138,7 @@ module.exports = {
     new HTMLWebpackPlugin({
       template: './public/reports.html',
       inject: 'body',
-      filename: 'press-detail.html',
+      filename: 'reports.html',
       minify: {
         collapseWhitespace: IS_PROD,
       },
