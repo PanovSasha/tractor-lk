@@ -28,7 +28,7 @@ export const pressFns = () => {
       $NEWS.text('')
     }
 
-    $.each(items, function (_, el) {
+    $.each(items, function(_, el) {
       const { activeFrom, name, previewPicture, url } = el
 
       const preview = previewPicture?.src ? previewPicture.src : '/assets/img/prev-news.webp'
@@ -69,7 +69,7 @@ export const pressFns = () => {
     }
 
     $.ajax({
-      url: `/api/v1/news`,
+      url: `/api/v1/personal_news`,
       method: 'post',
       dataType: 'json',
       data: data,
@@ -77,7 +77,7 @@ export const pressFns = () => {
       headers: {
         'Api-Key': 'tUKdAP2Gmv/?Vyv23CI16rDsAB=UN7yFpQvirTa5Ix21BzP4w6lFfqr1qSoySJfKVhXCpH',
       },
-      success: function (result) {
+      success: function(result) {
         if (result.status === 'success' && result?.data?.items?.length) {
           $NEWS.removeClass(HIDDEN_CLASS)
           $MORE_BTN.removeClass(HIDDEN_CLASS)
@@ -103,7 +103,7 @@ export const pressFns = () => {
   }
 
   const onInputFns = () => {
-    $PRESS_INPUT_SUBMIT_BTN.on('click', function () {
+    $PRESS_INPUT_SUBMIT_BTN.on('click', function() {
       getNews()
     })
 
@@ -115,7 +115,7 @@ export const pressFns = () => {
   }
 
   const onSelectFns = () => {
-    $PRESS_SELECT_YEARS_OPTIONS.on('click', function () {
+    $PRESS_SELECT_YEARS_OPTIONS.on('click', function() {
       const $t = $(this)
 
       $PRESS_SELECT_YEARS_CURRENT_BTN.attr('data-year', $t.attr('data-year'))
@@ -129,7 +129,7 @@ export const pressFns = () => {
       getNews()
     })
 
-    $PRESS_SELECT_MONTH_OPTIONS.on('click', function () {
+    $PRESS_SELECT_MONTH_OPTIONS.on('click', function() {
       const $t = $(this)
 
       $PRESS_SELECT_MONTH_CURRENT_BTN.attr('data-month', $t.attr('data-month'))
@@ -138,7 +138,7 @@ export const pressFns = () => {
   }
 
   const getNewsByMoreBtn = () => {
-    $MORE_BTN.on('click', function () {
+    $MORE_BTN.on('click', function() {
       const $t = $(this)
 
       getNews($t.attr('data-next-page'))

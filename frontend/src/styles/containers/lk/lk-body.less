@@ -1,13 +1,18 @@
 @import "descriptions";
 
 .lk-body {
+  min-width: 0;
   margin-block: @offset50;
 
   @media @xxl-tablet {
     margin-block: @offset32;
   }
-  
+
   @media @tablet {
     margin-block: 0;
+  }
+
+  .lk--info-detail & {
+    .full-width-tablet();
   }
 }

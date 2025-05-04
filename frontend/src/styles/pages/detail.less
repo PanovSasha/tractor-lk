@@ -1,35 +1,7 @@
 @import "descriptions";
 
 .detail {
-  &__shell {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    gap: @offset12;
-
-    @media @tablet {
-      .f-column(40);
-      flex-direction: column-reverse;
-    }
-
-    &--with-slider {
-      grid-template-areas: 'aside body'
-                           'slider slider';
-
-      @media @tablet {
-        display: grid;
-        gap: @offset40 0;
-        grid-template-areas: 'body'
-                             'slider'
-                             'aside';
-      }
-    }
-
-    .years-slider__slide & {
-      @media @tablet {
-        .f-column(40);
-      }
-    }
-  }
+  width: 100%;
 
   &__aside-shell {
     .detail__shell--with-slider & {
@@ -76,24 +48,12 @@
   }
 
   &__body {
-    min-width: 0;
-    width: 100%;
-    padding-right: 20%;
+    max-width: 940px;
+    margin-inline: auto;
 
     @media @tablet {
+      max-width: 100%;
       padding-right: 0;
-    }
-
-    .detail__shell--with-slider & {
-      grid-area: body;
-    }
-
-    .years-slider__slide & {
-      padding-bottom: 98px;
-
-      @media @tablet {
-        padding-bottom: 60px;
-      }
     }
   }
 
@@ -111,7 +71,8 @@
     }
 
     h1 {
-      .h2();
+      .h3();
+      color: @text-brand;
       margin-bottom: @offset64;
 
       @media @tablet {
@@ -178,7 +139,7 @@
       }
     }
 
-    p, b, i, q {
+    p, b, i, q, table {
       margin-top: @offset32;
 
       @media @tablet {
@@ -187,6 +148,18 @@
 
       &:first-child {
         margin-top: 0;
+      }
+    }
+
+    table {
+      margin-bottom: @offset32;
+
+      @media @tablet {
+        margin-bottom: @offset24;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
       }
     }
 
@@ -245,6 +218,49 @@
 
     b a {
       font-weight: 700;
+    }
+
+    table {
+      width: 100%;
+
+      thead {
+        tr {
+          td {
+
+            background-color: @bg-brand;
+            color: @white;
+            border: 1px solid @grey-250;
+            text-align: center;
+            font-weight: bold;
+            padding: 12px 6px;
+          }
+        }
+      }
+
+      tbody {
+        tr {
+          td {
+            border: 1px solid @grey-250;
+            padding: 8px;
+
+            &:last-child {
+              text-align: center;
+            }
+          }
+
+          &:nth-child(odd) {
+            td {
+              background-color: @grey-280;
+            }
+          }
+
+          &:nth-child(even) {
+            td {
+              background-color: @grey-250;
+            }
+          }
+        }
+      }
     }
   }
 }

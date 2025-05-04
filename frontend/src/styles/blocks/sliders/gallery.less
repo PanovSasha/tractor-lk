@@ -3,18 +3,21 @@
 .gallery {
   &__slider-shell {
     .detail__shell--with-slider & {
-      grid-area: slider;
+      .full-width-tablet();
+      min-width: 0;
+      width: 100%;
       margin-top: 150px;
 
       @media @tablet {
-        min-width: 0;
-        width: 100%;
-        margin-top: 0;
+        margin-top: @offset32;
       }
     }
   }
 
   &__slider {
+    @media @tablet {
+      padding-inline: @tablet-padding;
+    }
   }
 
   &__slide {
