@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="icon" type="image/png" href="/assets/favicon/favicon-96x96.png"
+        sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon/favicon.svg" />
+  <link rel="shortcut icon" href="/assets/favicon/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180"
+        href="/assets/favicon/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="Agromash" />
+  <link rel="manifest" href="/assets/favicon/site.webmanifest" />
+  <title>Тракторы | Личный кабинет - Отчёты</title>
+</head>
+
+<body class="body">
+
+<main class="main js-main">
+  <div class="wrap">
+    <div class="lk">
+      <div class="lk-aside">
+        <div class="lk-aside__topline lk-topline js-lk-topline">
+          <div class="lk-topline__title">
+            <a class="lk-topline__title-logo" href="/">
+              <svg class="lk-topline__title-logo-img">
+                <use xlink:href="/assets/sprite/sprite.svg#logo"></use>
+              </svg>
+            </a>
+            
+            <button
+              class="lk-topline__title-open-btn js-lk-topline-title-open-btn"
+              type="button">
+              ЛК
+            </button>
+          </div>
+          
+          <div class="lk-topline__links">
+            <a
+              class="lk-topline__link accessibility-link"
+              href="/">
+              <svg class='icon icon--20'>
+                <use xlink:href="/assets/sprite/sprite.svg#home"></use>
+              </svg>
+              
+              Главная
+            </a>
+            
+            <a
+              class="lk-topline__link active lk-topline__link--offset accessibility-link"
+              href="reports.html">
+              <svg class="icon icon--20">
+                <use xlink:href="/assets/sprite/sprite.svg#info"></use>
+              </svg>
+              
+              Полезная
+              <br class="only-desktop" />
+              информация
+            </a>
+            
+            <a
+              class="lk-topline__link accessibility-link"
+              href="#">
+              <svg class="icon icon--20">
+                <use xlink:href="/assets/sprite/sprite.svg#reports"></use>
+              </svg>
+              
+              Отчёты
+            </a>
+          </div>
+        </div>
+        
+        <button
+          class="lk-aside__bottom js-lk-aside-bottom accessibility-link">
+          <svg class="icon icon--20">
+            <use xlink:href="/assets/sprite/sprite.svg#exit"></use>
+          </svg>
+          
+          Выйти
+        </button>
+      </div>
+      
+      <div class="lk-body">
+        <section
+          class="section section--top">
+          <h1 class="h3 color-blue mb-64-40">
+            Отчёты
+          </h1>
+          
+          <form class="upload js-upload">
+            <div class="upload__text">
+              <h2 class="upload__title">
+                Форма для&nbsp;заполнения
+              </h2>
+              
+              <p class="upload__subtitle">
+                Загрузите следующий отчёт не&nbsp;позднее 10&nbsp;числа
+              </p>
+            </div>
+            
+            <div class="upload__input-shell">
+              <input name="report" type="file" />
+            </div>
+            
+            <div
+              class="upload__select upload__select--year js-upload-select-year select js-select">
+              <div
+                class="select__current-btn-container js-select-current-btn-container">
+                <button
+                  data-year="0"
+                  class="select__current-btn js-select-current-btn"
+                  type="button">
+                  Год
+                </button>
+              </div>
+              
+              <div class="select__options">
+                <button type="button" data-id="2025"
+                        class="select__option js-select-option">
+                  2025
+                </button>
+                
+                <button type="button" data-id="2024"
+                        class="select__option js-select-option">
+                  2024
+                </button>
+                
+                <button type="button" data-id="2023"
+                        class="select__option js-select-option">
+                  2023
+                </button>
+              </div>
+              
+              <select
+                aria-label="year"
+                class="select__native js-select-native-select"
+                name="year">
+                <option value="2025">2025</option>
+                <option value="2024">2024</option>
+                <option value="2023">2023</option>
+              </select>
+            </div>
+            
+            <div
+              class="upload__select upload__select--quarter js-upload-select-quarter select js-select">
+              <div
+                class="select__current-btn-container js-select-current-btn-container">
+                <button
+                  data-quarter="0"
+                  class="select__current-btn js-select-current-btn"
+                  type="button">
+                  Квартал
+                </button>
+              </div>
+              
+              <div class="select__options">
+                <button type="button" data-id="4"
+                        class="select__option js-select-option">
+                  4 квартал
+                </button>
+                
+                <button type="button" data-id="3"
+                        class="select__option js-select-option">
+                  3 квартал
+                </button>
+                
+                <button type="button" data-id="2"
+                        class="select__option js-select-option">
+                  2 квартал
+                </button>
+                
+                <button type="button" data-id="1"
+                        class="select__option js-select-option">
+                  1 квартал
+                </button>
+              </div>
+              
+              <select aria-label="округа"
+                      class="select__native js-select-native-select"
+                      name="quarter">
+                <option value="4">4 квартал</option>
+                <option value="3">3 квартал</option>
+                <option value="2">2 квартал</option>
+                <option value="1">1 квартал</option>
+              </select>
+            </div>
+            
+            <button
+              disabled="disabled"
+              type="button"
+              class="btn btn--primary upload__btn js-upload-btn">
+              <svg class="icon icon--20">
+                <use xlink:href="/assets/sprite/sprite.svg#upload"></use>
+              </svg>
+              
+              Загрузить
+            </button>
+          </form>
+          
+          <div class="reports js-reports">
+            <div class="reports__filters">
+              <div
+                class="reports__filters-select reports__filters-select--year js-reports-filters-select-year select js-select">
+                <div
+                  class="select__current-btn-container js-select-current-btn-container">
+                  <button
+                    data-year="0"
+                    class="select__current-btn js-select-current-btn"
+                    type="button">
+                    За все время
+                  </button>
+                </div>
+                
+                <div class="select__options">
+                  <button type="button" data-id="0" data-year="0"
+                          class="select__option js-select-option">
+                    За все время
+                  </button>
+                  
+                  <button type="button" data-id="1" data-year="2025"
+                          class="select__option js-select-option">
+                    2025
+                  </button>
+                  
+                  <button type="button" data-id="2" data-year="2024"
+                          class="select__option js-select-option">
+                    2024
+                  </button>
+                  
+                  <button type="button" data-id="3" data-year="2023"
+                          class="select__option js-select-option">
+                    2023
+                  </button>
+                </div>
+                
+                <select aria-label="округа"
+                        class="select__native js-select-native-select"
+                        name="type">
+                  <option value="0">all</option>
+                  <option value="1">2025</option>
+                  <option value="2">2024</option>
+                  <option value="3">2023</option>
+                </select>
+              </div>
+            </div>
+            
+            <div class="reports__shell js-press-news-shell">
+              <div class="reports__items js-reports-items">
+                <a
+                  data-reports-year="2025"
+                  target="_blank"
+                  href="/"
+                  class="load-data__item">
+                  <h3 class="load-data__item-title">
+                    1 квартал 2025
+                  </h3>
+                  
+                  <div class="load-data__item-footer">
+                    <div class="load-data__item-info">
+                      <img
+                        class="load-data__item-img icon icon--20"
+                        loading="lazy"
+                        src="/assets/svg/icons/tech-detail/file.svg"
+                        alt="">
+                      
+                      3.7 mb
+                    </div>
+                    
+                    <p
+                      class="load-data__item-link accessibility-link accessibility-link--blue accessibility-link--with-arrow">
+                      Скачать
+                      
+                      <svg
+                        class="icon icon--20 section__link-btn-icon">
+                        <use
+                          xlink:href="/assets/sprite/sprite.svg#right-arrow"></use>
+                      </svg>
+                    </p>
+                  </div>
+                </a>
+                
+                <a
+                  data-reports-year="2024"
+                  target="_blank"
+                  href="/"
+                  class="load-data__item">
+                  <h3 class="load-data__item-title">
+                    4 квартал 2024
+                  </h3>
+                  
+                  <div class="load-data__item-footer">
+                    <div class="load-data__item-info">
+                      <img
+                        class="load-data__item-img icon icon--20"
+                        loading="lazy"
+                        src="/assets/svg/icons/tech-detail/file.svg"
+                        alt="">
+                      
+                      3.7 mb
+                    </div>
+                    
+                    <p
+                      class="load-data__item-link accessibility-link accessibility-link--blue accessibility-link--with-arrow">
+                      Скачать
+                      
+                      <svg
+                        class="icon icon--20 section__link-btn-icon">
+                        <use
+                          xlink:href="/assets/sprite/sprite.svg#right-arrow"></use>
+                      </svg>
+                    </p>
+                  </div>
+                </a>
+                
+                <a
+                  data-reports-year="2024"
+                  target="_blank"
+                  href="/"
+                  class="load-data__item">
+                  <h3 class="load-data__item-title">
+                    3 квартал 2024
+                  </h3>
+                  
+                  <div class="load-data__item-footer">
+                    <div class="load-data__item-info">
+                      <img
+                        class="load-data__item-img icon icon--20"
+                        loading="lazy"
+                        src="/assets/svg/icons/tech-detail/file.svg"
+                        alt="">
+                      
+                      3.7 mb
+                    </div>
+                    
+                    <p
+                      class="load-data__item-link accessibility-link accessibility-link--blue accessibility-link--with-arrow">
+                      Скачать
+                      
+                      <svg
+                        class="icon icon--20 section__link-btn-icon">
+                        <use
+                          xlink:href="/assets/sprite/sprite.svg#right-arrow"></use>
+                      </svg>
+                    </p>
+                  </div>
+                </a>
+                
+                <a
+                  data-reports-year="2024"
+                  target="_blank"
+                  href="/"
+                  class="load-data__item">
+                  <h3 class="load-data__item-title">
+                    2 квартал 2024
+                  </h3>
+                  
+                  <div class="load-data__item-footer">
+                    <div class="load-data__item-info">
+                      <img
+                        class="load-data__item-img icon icon--20"
+                        loading="lazy"
+                        src="/assets/svg/icons/tech-detail/file.svg"
+                        alt="">
+                      
+                      3.7 mb
+                    </div>
+                    
+                    <p
+                      class="load-data__item-link accessibility-link accessibility-link--blue accessibility-link--with-arrow">
+                      Скачать
+                      
+                      <svg
+                        class="icon icon--20 section__link-btn-icon">
+                        <use
+                          xlink:href="/assets/sprite/sprite.svg#right-arrow"></use>
+                      </svg>
+                    </p>
+                  </div>
+                </a>
+                
+                <a
+                  data-reports-year="2024"
+                  target="_blank"
+                  href="/"
+                  class="load-data__item">
+                  <h3 class="load-data__item-title">
+                    1 квартал 2024
+                  </h3>
+                  
+                  <div class="load-data__item-footer">
+                    <div class="load-data__item-info">
+                      <img
+                        class="load-data__item-img icon icon--20"
+                        loading="lazy"
+                        src="/assets/svg/icons/tech-detail/file.svg"
+                        alt="">
+                      
+                      3.7 mb
+                    </div>
+                    
+                    <p
+                      class="load-data__item-link accessibility-link accessibility-link--blue accessibility-link--with-arrow">
+                      Скачать
+                      
+                      <svg
+                        class="icon icon--20 section__link-btn-icon">
+                        <use
+                          xlink:href="/assets/sprite/sprite.svg#right-arrow"></use>
+                      </svg>
+                    </p>
+                  </div>
+                </a>
+                
+                <a
+                  data-reports-year="2023"
+                  target="_blank"
+                  href="/"
+                  class="load-data__item">
+                  <h3 class="load-data__item-title">
+                    4 квартал 2023
+                  </h3>
+                  
+                  <div class="load-data__item-footer">
+                    <div class="load-data__item-info">
+                      <img
+                        class="load-data__item-img icon icon--20"
+                        loading="lazy"
+                        src="/assets/svg/icons/tech-detail/file.svg"
+                        alt="">
+                      
+                      3.7 mb
+                    </div>
+                    
+                    <p
+                      class="load-data__item-link accessibility-link accessibility-link--blue accessibility-link--with-arrow">
+                      Скачать
+                      
+                      <svg
+                        class="icon icon--20 section__link-btn-icon">
+                        <use
+                          xlink:href="/assets/sprite/sprite.svg#right-arrow"></use>
+                      </svg>
+                    </p>
+                  </div>
+                </a>
+              </div>
+              
+              <div class="reports__no-result js-reports-no-result">
+                <h2 class="h4">
+                  Результаты не найдены
+                </h2>
+                
+                <p class="reports__no-result-subtitle">
+                  Попробуйте поискать по&nbsp;другим ключевым словам или
+                  уберите
+                  примененные фильтры
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+</main>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+@import "descriptions";
+
+.upload {
+  border: 1px solid @border-primary;
+  display: flex;
+  align-items: center;
+  gap: @offset16;
+  padding: @offset16;
+  margin-bottom: @offset64;
+
+  &__text {
+  }
+
+  &__title {
+    .h6();
+  }
+
+  &__subtitle {
+    .p2();
+    color: @text-danger;
+  }
+
+  &__input-shell {
+    flex: 1;
+  }
+
+  &__select {
+    &--year {
+      width: 160px;
+    }
+
+    &--quarter {
+      width: 160px;
+    }
+  }
+
+  &__btn {
+  }
+}

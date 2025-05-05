@@ -6,12 +6,13 @@ export function selectFunctions() {
   const $SELECTS = $('.js-select')
 
   if ($SELECTS.length) {
-    $.each($SELECTS, function (_, select) {
+    $.each($SELECTS, function(_, select) {
       const $select = $(select)
 
       const $currentBtn = $select.find('.js-select-current-btn')
       const $options = $select.find('.js-select-option')
-      const $nativeSelect = $select.find('.js-select-native')
+      const $nativeSelect = $select.find('.js-select-native-select')
+      const $nativeSelectOptions = $nativeSelect.find('option')
 
       const closeSelects = () => {
         $DOCUMENT.on('click', ({ target }) => {
@@ -30,7 +31,7 @@ export function selectFunctions() {
       }
 
       const openSelect = () => {
-        $currentBtn.on('click', function () {
+        $currentBtn.on('click', function() {
           if ($select.hasClass(OPEN_CLASS)) {
             $select.toggleClass(OPEN_CLASS)
           } else {
@@ -41,7 +42,7 @@ export function selectFunctions() {
       }
 
       const chooseOption = () => {
-        $options.on('click', function () {
+        $options.on('click', function() {
           const $t = $(this)
 
           $options.removeClass(ACTIVE_CLASS)
@@ -60,7 +61,14 @@ export function selectFunctions() {
           }
 
           $select.removeClass(OPEN_CLASS)
-          $nativeSelect.attr('selected', 'selected')
+
+          $.each($nativeSelectOptions, function(_, el) {
+            const $el = $(el)
+
+            if ($t.attr('data-id') === $el.attr('value')) {
+              $el.click()
+            }
+          })
         })
       }
 

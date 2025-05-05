@@ -1,7 +1,7 @@
-import { catalogFns } from './catalog'
 import { pressFns } from './press'
+import { reportsFns } from './reports'
 
 export const pagesFunctions = () => {
-  catalogFns()
   pressFns()
+  reportsFns()
 }

@@ -8,6 +8,7 @@ require('../../assets/sprite/geo.svg')
 require('../../assets/sprite/logo.svg')
 require('../../assets/sprite/point.svg')
 require('../../assets/sprite/search.svg')
+require('../../assets/sprite/upload.svg')
 
 //arrows
 require('../../assets/sprite/arrows/black-right-arrow.svg')
