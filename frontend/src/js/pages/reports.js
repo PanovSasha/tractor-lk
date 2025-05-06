@@ -62,8 +62,6 @@ export const reportsFns = () => {
 
         const file = this.files[0]
 
-        console.log(file)
-
         $UPLOAD_INPUT_FILE_NAME.html(file.name)
         $UPLOAD_INPUT_FILE_SIZE.html(formatBytes(file.size))
 

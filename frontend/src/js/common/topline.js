@@ -34,7 +34,6 @@ export const topLineFunctions = () => {
         // data: 'login=test&password=123456',
         contentType: 'application/x-www-form-urlencoded',
         success: (response) => {
-          console.log(response)
           location.reload()
 
           // if (response.status === 'success' && response.data.personal_link) {
@@ -46,7 +45,7 @@ export const topLineFunctions = () => {
       })
     })
   }
-  
+
   toggleMobileMenu()
   logoutFromLk()
 }
