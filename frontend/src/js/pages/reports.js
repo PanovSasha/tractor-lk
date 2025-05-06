@@ -1,8 +1,14 @@
-import { isEnterPressed } from '../lib/utils'
+import { formatBytes, isEnterPressed } from '../lib/utils'
 import { DISABLE_CLASS, HIDDEN_CLASS, SHOW_CLASS } from '../lib/constants'
 
 export const reportsFns = () => {
   const $UPLOAD = $('.js-upload')
+
+  const $UPLOAD_INPUT = $UPLOAD.find('.js-upload-input')
+  const $UPLOAD_INPUT_LABEL = $UPLOAD.find('.js-upload-input-label')
+  const $UPLOAD_INPUT_FILE = $UPLOAD.find('.js-upload-input-file')
+  const $UPLOAD_INPUT_FILE_NAME = $UPLOAD.find('.js-upload-input-file-name')
+  const $UPLOAD_INPUT_FILE_SIZE = $UPLOAD.find('.js-upload-input-file-size')
 
   const $UPLOAD_SELECT_YEARS = $UPLOAD.find('.js-upload-select-year')
   const $UPLOAD_SELECT_YEARS_CURRENT_BTN = $UPLOAD_SELECT_YEARS.find('.js-select-current-btn')
@@ -17,10 +23,11 @@ export const reportsFns = () => {
 
   let IS_YEAR_SELECTED = false
   let IS_QUARTER_SELECTED = false
+  let IS_FILE = false
 
   const checkAllValues = () => {
-    if (IS_YEAR_SELECTED && IS_QUARTER_SELECTED) {
-      $UPLOAD_BTN.prop('disabled', false)
+    if (IS_FILE && IS_YEAR_SELECTED && IS_QUARTER_SELECTED) {
+      $UPLOAD_BTN.prop('disabled', false).removeClass(DISABLE_CLASS)
     }
   }
 
@@ -47,6 +54,28 @@ export const reportsFns = () => {
     })
   }
 
+  const inputFns = () => {
+    const checkInput = () => {
+      $UPLOAD_INPUT.on('change', function(e) {
+        $UPLOAD_INPUT_LABEL.addClass(HIDDEN_CLASS)
+        $UPLOAD_INPUT_FILE.addClass(SHOW_CLASS)
+
+        const file = this.files[0]
+
+        console.log(file)
+
+        $UPLOAD_INPUT_FILE_NAME.html(file.name)
+        $UPLOAD_INPUT_FILE_SIZE.html(formatBytes(file.size))
+
+        IS_FILE = true
+        checkAllValues()
+      })
+    }
+
+    checkInput()
+  }
+
+
   const onSelectFns = () => {
     $UPLOAD_SELECT_YEARS_OPTIONS.on('click', function() {
       const $t = $(this)
@@ -67,8 +96,6 @@ export const reportsFns = () => {
 
   const submitFormDataByUploadBtnPress = () => {
     $UPLOAD_BTN.on('click', function() {
-      const $t = $(this)
-
       sendReport()
     })
   }
@@ -97,7 +124,8 @@ export const reportsFns = () => {
       }
     })
   }
-  
+
+  inputFns()
   onSelectFns()
   filterReports()
   submitFormDataByUploadBtnPress()

@@ -84,7 +84,7 @@
       
       <div class="lk-body">
         <section
-          class="section section--top">
+          class="section section--full-width-tablet -mt-24">
           <h1 class="h3 color-blue mb-64-40">
             Отчёты
           </h1>
@@ -100,103 +100,127 @@
               </p>
             </div>
             
-            <div class="upload__input-shell">
-              <input name="report" type="file" />
-            </div>
-            
-            <div
-              class="upload__select upload__select--year js-upload-select-year select js-select">
+            <div class="upload__actions">
+              <div class="upload__input-shell">
+                <input
+                  class="upload__input js-upload-input"
+                  name="report" type="file" id="report" />
+                <label for="report"
+                       class="btn btn--primary upload__input-label js-upload-input-label">
+                  Выберите файл до 50МБ</label>
+                
+                <label for="report"
+                       class="upload__input-file js-upload-input-file">
+                  <img
+                    class="load-data__item-img icon icon--20"
+                    loading="lazy"
+                    src="/assets/svg/icons/tech-detail/file.svg"
+                    alt="">
+                  
+                  <span
+                    class="upload__input-file-name js-upload-input-file-name">
+                </span>
+                  
+                  <span
+                    class="upload__input-file-size js-upload-input-file-size">
+                </span>
+                </label>
+              </div>
+              
               <div
-                class="select__current-btn-container js-select-current-btn-container">
-                <button
-                  data-year="0"
-                  class="select__current-btn js-select-current-btn"
-                  type="button">
-                  Год
-                </button>
+                class="upload__select upload__select--year js-upload-select-year select js-select">
+                <div
+                  class="select__current-btn-container js-select-current-btn-container">
+                  <button
+                    data-year="0"
+                    class="select__current-btn js-select-current-btn"
+                    type="button">
+                    Год
+                  </button>
+                </div>
+                
+                <div class="select__options">
+                  <button type="button" data-id="2025"
+                          class="select__option js-select-option">
+                    2025
+                  </button>
+                  
+                  <button type="button" data-id="2024"
+                          class="select__option js-select-option">
+                    2024
+                  </button>
+                  
+                  <button type="button" data-id="2023"
+                          class="select__option js-select-option">
+                    2023
+                  </button>
+                </div>
+                
+                <select
+                  aria-label="year"
+                  class="select__native js-select-native-select"
+                  name="year">
+                  <option value="2025">2025</option>
+                  <option value="2024">2024</option>
+                  <option value="2023">2023</option>
+                </select>
               </div>
               
-              <div class="select__options">
-                <button type="button" data-id="2025"
-                        class="select__option js-select-option">
-                  2025
-                </button>
-                
-                <button type="button" data-id="2024"
-                        class="select__option js-select-option">
-                  2024
-                </button>
-                
-                <button type="button" data-id="2023"
-                        class="select__option js-select-option">
-                  2023
-                </button>
-              </div>
-              
-              <select
-                aria-label="year"
-                class="select__native js-select-native-select"
-                name="year">
-                <option value="2025">2025</option>
-                <option value="2024">2024</option>
-                <option value="2023">2023</option>
-              </select>
-            </div>
-            
-            <div
-              class="upload__select upload__select--quarter js-upload-select-quarter select js-select">
               <div
-                class="select__current-btn-container js-select-current-btn-container">
-                <button
-                  data-quarter="0"
-                  class="select__current-btn js-select-current-btn"
-                  type="button">
-                  Квартал
-                </button>
+                class="upload__select upload__select--quarter js-upload-select-quarter select js-select">
+                <div
+                  class="select__current-btn-container js-select-current-btn-container">
+                  <button
+                    data-quarter="0"
+                    class="select__current-btn js-select-current-btn"
+                    type="button">
+                    Квартал
+                  </button>
+                </div>
+                
+                <div class="select__options">
+                  <button type="button" data-id="4"
+                          class="select__option js-select-option">
+                    4 квартал
+                  </button>
+                  
+                  <button type="button" data-id="3"
+                          class="select__option js-select-option">
+                    3 квартал
+                  </button>
+                  
+                  <button type="button" data-id="2"
+                          class="select__option js-select-option">
+                    2 квартал
+                  </button>
+                  
+                  <button type="button" data-id="1"
+                          class="select__option js-select-option">
+                    1 квартал
+                  </button>
+                </div>
+                
+                <select aria-label="округа"
+                        class="select__native js-select-native-select"
+                        name="quarter">
+                  <option value="4">4 квартал</option>
+                  <option value="3">3 квартал</option>
+                  <option value="2">2 квартал</option>
+                  <option value="1">1 квартал</option>
+                </select>
               </div>
               
-              <div class="select__options">
-                <button type="button" data-id="4"
-                        class="select__option js-select-option">
-                  4 квартал
-                </button>
+              <button
+                disabled="disabled"
+                type="button"
+                class="disable btn btn--primary upload__btn js-upload-btn">
+                <svg class="icon icon--20">
+                  <use xlink:href="/assets/sprite/sprite.svg#upload"></use>
+                </svg>
                 
-                <button type="button" data-id="3"
-                        class="select__option js-select-option">
-                  3 квартал
-                </button>
-                
-                <button type="button" data-id="2"
-                        class="select__option js-select-option">
-                  2 квартал
-                </button>
-                
-                <button type="button" data-id="1"
-                        class="select__option js-select-option">
-                  1 квартал
-                </button>
-              </div>
-              
-              <select aria-label="округа"
-                      class="select__native js-select-native-select"
-                      name="quarter">
-                <option value="4">4 квартал</option>
-                <option value="3">3 квартал</option>
-                <option value="2">2 квартал</option>
-                <option value="1">1 квартал</option>
-              </select>
+                Загрузить
+              </button>
             </div>
-            
-            <button
-              disabled="disabled"
-              type="button"
-              class="btn btn--primary upload__btn js-upload-btn">
-              <svg class="icon icon--20">
-                <use xlink:href="/assets/sprite/sprite.svg#upload"></use>
-              </svg>
-              
-              Загрузить
-            </button>
           </form>
           
           <div class="reports js-reports">

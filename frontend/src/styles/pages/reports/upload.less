@@ -8,7 +8,21 @@
   padding: @offset16;
   margin-bottom: @offset64;
 
+  @media @xl-tablet {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  @media @tablet {
+    margin-bottom: @offset40;
+  }
+
   &__text {
+    flex: 1 1;
+
+    @media @l-tablet {
+      margin-right: auto;
+    }
   }
 
   &__title {
@@ -20,20 +34,100 @@
     color: @text-danger;
   }
 
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: @offset16;
+    margin-left: auto;
+
+    @media @xl-tablet {
+      margin-left: 0;
+    }
+
+    @media @s-tablet {
+      flex-direction: column;
+      width: 100%;
+      align-items: stretch;
+    }
+  }
+
   &__input-shell {
-    flex: 1;
+    .f-center();
+    border-right: 1px solid @border-primary;
+    align-self: stretch;
+    padding-right: @offset16;
+
+    @media @s-tablet {
+      padding-right: 0;
+      border-right: none;
+    }
+  }
+
+  &__input {
+    .v-hidden();
+  }
+
+  &__input-label {
+    @media @s-tablet {
+      width: 100%;
+    }
+
+    &.hide {
+      display: none;
+    }
+  }
+
+  &__input-file {
+    display: none;
+
+    &.show {
+      display: flex;
+      align-items: center;
+      gap: @offset6;
+      cursor: pointer;
+      height: 100%;
+
+      @media @s-tablet {
+        width: 100%;
+      }
+    }
+  }
+
+  &__input-file-name {
+    .ellipsis-max-width(100px);
+
+    @media @tablet {
+      .ellipsis-max-width(140px);
+    }
+
+    @media @s-tablet {
+      .ellipsis-max-width(calc(100% - 110px));
+    }
+  }
+
+  &__input-file-size {
+    white-space: nowrap;
+
+    @media @s-tablet {
+      margin-left: auto;
+    }
   }
 
   &__select {
     &--year {
-      width: 160px;
+      width: 104px;
+
+      @media @s-tablet {
+        width: 100%;
+      }
     }
 
     &--quarter {
-      width: 160px;
-    }
-  }
+      width: 140px;
 
-  &__btn {
+      @media @s-tablet {
+        width: 100%;
+      }
+    }
   }
 }
