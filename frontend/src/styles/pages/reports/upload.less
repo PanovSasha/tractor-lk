@@ -5,7 +5,8 @@
   display: flex;
   align-items: center;
   gap: @offset16;
-  padding: @offset16;
+  position: relative;
+  padding: @offset24;
   margin-bottom: @offset64;
 
   @media @xl-tablet {
@@ -15,6 +16,32 @@
 
   @media @tablet {
     margin-bottom: @offset40;
+  }
+
+  &.error-report {
+    &:after {
+      .fs12-16();
+      color: @red-500;
+      position: absolute;
+      bottom: 6px;
+      right: @offset24;
+
+      @media @l-mobile {
+        .fs10-14();
+      }
+    }
+  }
+
+  &.error-report {
+    &:after {
+      content: 'Отчет за данный год и квартал уже загружен';
+    }
+  }
+
+  &.error-download {
+    &:after {
+      content: 'Ошибка загрузки';
+    }
   }
 
   &__text {
@@ -129,5 +156,14 @@
         width: 100%;
       }
     }
+  }
+
+  &__btn {
+    min-width: 134px;
+    height: 48px;
+  }
+
+  &__btn-base-text {
+    .f-center(8);
   }
 }

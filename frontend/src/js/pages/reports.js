@@ -1,8 +1,21 @@
-import { formatBytes, isEnterPressed } from '../lib/utils'
-import { DISABLE_CLASS, HIDDEN_CLASS, SHOW_CLASS } from '../lib/constants'
+import {
+  deleteSpinner,
+  formatBytes,
+  isEnterPressed,
+  renderSpinner,
+} from '../lib/utils'
+import {
+  DISABLE_CLASS,
+  ERROR_CLASS,
+  HIDDEN_CLASS,
+  SHOW_CLASS,
+} from '../lib/constants'
 
 export const reportsFns = () => {
   const $UPLOAD = $('.js-upload')
+
+  const ERROR_REPORT = 'error-report'
+  const ERROR_UPLOAD = 'error-download'
 
   const $UPLOAD_INPUT = $UPLOAD.find('.js-upload-input')
   const $UPLOAD_INPUT_LABEL = $UPLOAD.find('.js-upload-input-label')
@@ -20,6 +33,7 @@ export const reportsFns = () => {
   const $UPLOAD_SELECT_QUARTER_OPTIONS = $UPLOAD_SELECT_QUARTER.find('.js-select-option')
 
   const $UPLOAD_BTN = $UPLOAD.find('.js-upload-btn')
+  const $UPLOAD_BTN_TEXT = $UPLOAD.find('.js-upload-btn-base-text')
 
   let IS_YEAR_SELECTED = false
   let IS_QUARTER_SELECTED = false
@@ -32,6 +46,10 @@ export const reportsFns = () => {
   }
 
   const sendReport = () => {
+    $UPLOAD.removeClass(ERROR_REPORT)
+    $UPLOAD_BTN_TEXT.hide()
+    renderSpinner($UPLOAD_BTN)
+
     const data = new FormData(document.querySelector('.js-upload'))
 
     data.set('year', $UPLOAD_SELECT_YEARS_CURRENT_BTN.attr('data-year'))
@@ -47,6 +65,17 @@ export const reportsFns = () => {
         'Api-Key': 'tUKdAP2Gmv/?Vyv23CI16rDsAB=UN7yFpQvirTa5Ix21BzP4w6lFfqr1qSoySJfKVhXCpH',
       },
       success: function(result) {
+        deleteSpinner()
+        $UPLOAD_BTN_TEXT.show()
+
+        if (result.status === 'error') {
+          if (result.errors[0].code === 0) {
+            $UPLOAD.addClass(ERROR_REPORT)
+          } else {
+            $UPLOAD.removeClass(ERROR_UPLOAD)
+          }
+        }
+
         if (result.status === 'success') {
           location.reload()
         }
