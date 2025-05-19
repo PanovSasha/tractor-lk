@@ -3,6 +3,7 @@ import { deleteSpinner, renderSpinner } from '../lib/utils'
 
 export const CallMeFormFns = () => {
   const $formShell = $('.js-call-form-shell')
+  const $formSendType = $formShell.attr('data-send-type')
 
   $.each($formShell, function(_, el) {
     const $formShellEl = $(el)
@@ -88,7 +89,7 @@ export const CallMeFormFns = () => {
           headers: {
             'Api-Key': 'tUKdAP2Gmv/?Vyv23CI16rDsAB=UN7yFpQvirTa5Ix21BzP4w6lFfqr1qSoySJfKVhXCpH',
           },
-          data: `params[fullName]=${name.val()}&params[phone]=${phone.val()}&bot=0`,
+          data: `params[type]=${$formSendType}&params[fullName]=${name.val()}&params[phone]=${phone.val()}&bot=0`,
           contentType: 'application/x-www-form-urlencoded',
           success: (data) => {
             deleteSpinner()
