@@ -252,20 +252,6 @@
       }
     }
 
-    a {
-      .accessibility-link();
-      .p1();
-      color: @text-brand;
-
-      &:hover {
-        text-decoration: underline;
-      }
-    }
-
-    b a {
-      font-weight: 700;
-    }
-
     table {
       width: 100%;
 
@@ -307,6 +293,22 @@
           }
         }
       }
+    }
+  }
+
+  &__body {
+    a {
+      .accessibility-link();
+      .p1();
+      color: @text-brand;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    b a {
+      font-weight: 700;
     }
   }
 }
